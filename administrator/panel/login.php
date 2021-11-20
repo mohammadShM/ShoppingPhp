@@ -1,8 +1,10 @@
 <?php
+declare(strict_types=1);
 include_once "./config/config.php";
 include_once "./config/Admin.php";
 $admin = new Admin();
 session_start();
+// for set username and password for admin in first login in the form of automatically
 $query = $admin->selectAdmin();
 if (empty($query)) {
     $username = "MohammadShM";

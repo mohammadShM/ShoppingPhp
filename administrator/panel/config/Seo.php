@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 include_once 'DB.php';
 
 class Seo
@@ -12,7 +13,10 @@ class Seo
         $this->con = $connect->getDB();
     }
 
-    public function insert($title, $keywords, $description, $author)
+    /** @noinspection SqlDialectInspection
+     * @noinspection SqlNoDataSourceInspection
+     */
+    public function insert($title, $keywords, $description, $author): void
     {
         $sql = $this->con->prepare("INSERT INTO seo(title,keywords,description,author)values(?,?,?,?)");
         $sql->bindParam(1, $title);
