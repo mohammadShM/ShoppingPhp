@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Vazir";
+    src: url("../../assetsMe/font/Vazir-Medium.woff2");
+}
+
+body {
+    background-color: #111111;
+    font-family: "Vazir", serif;
+}
+
+section.row {
+    height: 100vh;
+}
+
+section.row > section.col-6 {
+    background-color: #333333;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 5px whitesmoke, -5px -5px 10px 5px whitesmoke;
+}
+
+.btn-login {
+    width: 80%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    margin-left: 10%;
+    margin-right: 10%;
+}

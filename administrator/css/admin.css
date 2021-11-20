@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Vazir";
+    src: url("../../assetsMe/font/Vazir-Medium.woff2");
+}
+
+body {
+    background-color: #fcfcfc;
+    font-family: "Vazir", serif;
+}
