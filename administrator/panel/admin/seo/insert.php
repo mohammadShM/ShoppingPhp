@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 include_once "../../config/Seo.php";
 $seo = new Seo();
 // variable in request ============================================

@@ -1,4 +1,3 @@
 <?php
-include_once "./_header.php";
+declare(strict_types=1);
 include_once "./_body.php";
-include_once "./_footer.php";

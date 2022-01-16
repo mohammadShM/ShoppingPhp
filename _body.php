@@ -1,37 +1,30 @@
- <main class="wrapper">
-     <!-- ======= Top Bar ======= -->
-     <?php include_once "./partials/topBar.php"; ?>
-     <!-- ======= End Top Bar ======= -->
-     <!-- ======= Header menu ======= -->
-     <?php include_once "./partials/menu.php"; ?>
-     <!-- End Header menu -->
-     <!-- ======= Slider Hero Section ======= -->
-     <?php include_once "./partials/slider.php"; ?>
-     <!-- End Slider Hero Section -->
-     <!-- make website -->
-     <section id="main">
-         <!-- ======= About Us Section ======= -->
-         <?php include_once "./partials/about.php"; ?>
-         <!-- End About Us Section -->
-         <!-- ======= About Lists Section ======= -->
-         <?php include_once "./partials/aboutList.php"; ?>
-         <!-- End About Lists Section -->
-         <!-- ======= Counts Section ======= -->
-         <?php include_once "./partials/counts.php"; ?>
-         <!-- End Counts Section -->
-         <!-- ======= Services Section ======= -->
-         <?php include_once "./partials/service.php"; ?>
-         <!-- End Services Section -->
-         <!-- ======= Our Portfolio Section ======= -->
-         <?php include_once "./partials/portfolio.php"; ?>
-         <!-- End Our Portfolio Section -->
-         <!-- ======= Our Team Section ======= -->
-         <?php include_once "./partials/team.php"; ?>
-         <!-- End Our Team Section -->
-         <!-- ======= Frequently Asked Questions Section ======= -->
-         <?php include_once "./partials/asked.php"; ?>
-         <!-- End Frequently Asked Questions Section -->
-         <!-- ======= Contact Us Section ======= -->
-         <?php include_once "./partials/contact.php"; ?>
-         <!-- End Contact Us Section -->
-     </section>
+<!doctype html>
+<html lang="fa">
+<!-- ======================================== Start make header ======================================== -->
+<?php include_once "./_header.php"; ?>
+<!-- ======================================== End make header ======================================== -->
+<body>
+<!-- ======================================== Start make website ======================================== -->
+<main class="wrapper">
+  <!-- ======================================== Start make menu ======================================== -->
+    <?php include_once "./partials/menu.php"; ?>
+  <!-- ======================================== End make menu ======================================== -->
+  <!-- ======================================== Start make parallax ======================================== -->
+    <?php include_once "./partials/parallax.php"; ?>
+  <!-- ======================================== End make parallax ======================================== -->
+  <!-- ======================================== Start make news ======================================== -->
+    <?php include_once "./partials/news.php"; ?>
+  <!-- ======================================== End make news ======================================== -->
+  <!-- ======================================== Start make form ======================================== -->
+    <?php include_once "./partials/contact.php"; ?>
+  <!-- ======================================== End make form ======================================== -->
+  <!-- ======================================== Start make product ======================================== -->
+    <?php include_once "./partials/product.php"; ?>
+  <!-- ======================================== End make product ======================================== -->
+  <!-- ======================================== Start make footer ======================================== -->
+  <?php include_once "./_footer.php"; ?>
+  <!-- ======================================== End make footer ======================================== -->
+</main>
+<!-- ======================================== End make website ======================================== -->
+</body>
+</html>

@@ -1,50 +1,51 @@
-<!--  make header  -->
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <!-- meta and title seo+ -->
-    <title>Project Company - Index</title>
-    <meta name="keywords" content="فروشگاه ، فروشگاه شرکتی ، ..." /> <!-- کامنت مهم -->
-    <meta name="description" content="فروشگاه ، فروشگاه شرکتی ، فروشگاه خرید انواع لوازم تزیینی ..." />
-    <!-- توضیحات -->
-    <meta name="author" content="mohammad sh m" />
-    <meta name="robots" content="index,follow" />
-    <!--ربات گوگل هر لحظه آپدیت بشه ایندکس گذاری کنن و فکر نکنن جزبک اند-->
-    <!-- telegram meta -->
-    <meta property="og:title" content="Title" />
-    <meta property="og:site_name" content="Site name" />
-    <meta property="og:description" content="Description" />
-    <meta property="og:keywords" content="keywords" />
-    <meta property="og:image" content="Link to your logo" /> <!-- Link to your logo -->
-    <!-- For Facebook -->
-    <meta property="og:url" content="https://mysite/myarticle" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="my article title" />
-    <meta property="og:description" content="my article short description" />
-    <meta property="og:image" content="https://mysite/my-article-image.jpg" />
-    <!-- Link to your logo -->
-    <!--End  meta and title seo+ -->
-    <!-- Favicons -->
-    <link href="./assets/img/favicon.png" rel="icon">
-    <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <!-- Google Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet"> -->
-    <!-- Vendor CSS Files -->
-    <link href="./assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="./assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <!-- Template Main CSS File -->
-    <link href="./assets/css/style.css" rel="stylesheet">
-    <!--  link css me  -->
-    <!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">-->
-    <!--  End make header  -->
+  <!-- ======================================== Start for seo ======================================== -->
+  <meta charset="UTF-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <!-- ======================================== End for seo ======================================== -->
+  <!-- ======================================== Start for css ======================================== -->
+  <link href="./assets/css/style.css" rel="stylesheet"/>
+  <link href="./assets/fontawesome/all.css" rel="stylesheet"/>
+  <!-- ======================================== End for css ======================================== -->
+  <!-- =============================== for favicon =============================== -->
+  <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/icon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./assets/images/icon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./assets/images/icon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/images/icon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./assets/images/icon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./assets/images/icon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./assets/images/icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./assets/images/icon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/icon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./assets/images/icon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/icon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/images/icon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- =============================== for favicon =============================== -->
+  <!-- =============================== for Seo =============================== -->
+    <?php
+    include_once "./administrator/panel/config/Seo.php";
+    $seo = new Seo();
+    $query = $seo->selectLatestSeo();
+    ?>
+  <meta name="keywords" content="<?php echo $query['keywords'] ?>"/>
+  <meta name="description" content="<?php echo $query['description'] ?>"/>
+  <meta name="author" content="<?php echo $query['author'] ?>"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:title" content="<?php echo $query['title'] ?>"/>
+  <meta property="og:site_name" content="<?php echo $query['title'] ?>"/>
+  <meta property="og:description" content="<?php echo $query['description'] ?>"/>
+  <meta property="og:keywords" content="<?php echo $query['keywords'] ?>"/>
+  <meta property="og:image" content=""/>
+  <link rel="canonical" href="http://shoppingphp.mytest/indexSite.php"/>
+  <meta property="og:locale" content="fa_IR"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="سایت شخصی محمد شیخی"/>
+  <!-- =============================== for Seo =============================== -->
+  <title>Project Company</title>
 </head>
-
-<body>

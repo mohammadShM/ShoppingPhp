@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Vazir;
+    src: url('../../fonts/vazir/Vazir-Medium.eot');
+    src: url('../../fonts/vazir/Vazir-Medium.woff2') ;
+    src: url('../../fonts/vazir/Vazir-Medium.ttf') ;
+    src: url('../../fonts/vazir/Vazir-Medium.woff') ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    direction: rtl;
+    font-family: vazir, serif;
+}
+
+main.wrapper {
+    width: 100%;
+}

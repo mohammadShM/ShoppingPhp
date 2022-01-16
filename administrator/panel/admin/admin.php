@@ -24,8 +24,9 @@ checkSession();
   <!-- =================================== End make menu =================================== -->
   <!-- =================================== Start make form =================================== -->
   <section class="data mt-5">
-    <section class="row m-0">
+    <section class="row m-0 p-0">
       <section class="col-8 offset-2 jumbotron mt-5 shadow">
+        <h2 style="padding-bottom: 20px;margin-bottom:20px;border-bottom: 3px solid #716611;">Create Seo</h2>
         <form action="#" method="post">
           <section class="form-group">
             <label for="title">title : </label>
@@ -55,6 +56,25 @@ checkSession();
     </section>
   </section>
   <!-- =================================== End make form =================================== -->
+  <section class="row m-0 p-0 mt-5">
+    <section class="col-8 offset-2 jumbotron shadow">
+      <h2 style="padding-bottom: 20px;margin-bottom:20px;border-bottom: 3px solid #716611;">Show All Seo</h2>
+      <table class="table table-dark table-bordered table-hover shadow p-0 m-0 table-responsive-md w-100">
+        <thead class="text-center">
+        <tr>
+          <td>#</td>
+          <td>id</td>
+          <td>title</td>
+          <td>keywords</td>
+          <td>description</td>
+          <td>author</td>
+          <td>delete</td>
+        </tr>
+        </thead>
+        <tbody class="table-info text-center text-dark"></tbody>
+      </table>
+    </section>
+  </section>
 </section>
 <!-- =================================== End make template =================================== -->
 <!-- =================================== link js =================================== -->
@@ -62,7 +82,52 @@ checkSession();
 <script src="<?php echo URL . Bootstrap_Min_BUNDLE; ?>"></script>
 <script src="<?php echo URL . Bootstrap_Min_JS; ?>"></script>
 <script src="<?php echo URL . toastJs; ?>"></script>
+<!--suppress JSCheckFunctionSignatures, JSDeprecatedSymbols -->
 <script>
+    // for show data by ajax ==================================================
+    function read() {
+        $.ajax({
+            url: "show_details_seo.php",
+            method: "GET",
+            success: function (response) {
+                let data = JSON.parse(response);
+                let items = "";
+                for (let i = 0; i < data.length; i++) {
+                    items += "<tr>" +
+                        "<td>" + (i+1) + "</td>" +
+                        "<td>" + data[i].id + "</td>" +
+                        "<td>" + data[i].title + "</td>" +
+                        "<td>" + data[i].keywords + "</td>" +
+                        "<td>" + data[i].description + "</td>" +
+                        "<td>" + data[i].author + "</td>" +
+                        "<td><button id='" + data[i].id + "' class='btn btn-danger delete'>Delete</button></td>" +
+                        "</tr>";
+                }
+                $('table>tbody').html('').append(items);
+            }
+        });
+    }
+
+    read();
+    // for delete data by ajax ==================================================
+    $('table').on('click', '.delete', deleteItem);
+
+    function deleteItem() {
+        let id = $(this).attr('id');
+        $.ajax({
+            url: "seo/delete.php",
+            method: "POST",
+            data: {id: id},
+            success: function (response) {
+                if (Number(response) === 1) {
+                    read();
+                    alert("عملیات حذف با موفقیت انجام شد .");
+                }
+            }
+        });
+    }
+
+    // for send data by ajax ==================================================
     $('form').submit(function (event) {
         event.preventDefault();
         let title = $('input[name=title]').val();
@@ -81,41 +146,42 @@ checkSession();
             success: function (response) {
                 if (Number(response) === 1) {
                     $.toast({
-                        heading: 'موفقیت آمیز',
+                        heading: 'مشکل در ارسال داده',
                         text: "عنوان یا خالی می باشد و یا کمتر از 5 کاراکتر می باشد و یا بیشتر از 100 کاراکتر می باشد.",
                         showHideTransition: 'slide',
                         icon: 'error',
-                        hideAfter: 5000 ,
-                        position:"top-center",
+                        hideAfter: 5000,
+                        position: "top-center",
                     });
                 } else if (Number(response) === 2) {
                     $.toast({
-                        heading: 'موفقیت آمیز',
+                        heading: 'مشکل در ارسال داده',
                         text: "کلمات کلیدی یا خالی می باشد و یا کمتر از 5 کاراکتر می باشد و یا بیشتر از 500 کاراکتر می باشد.",
                         showHideTransition: 'slide',
                         icon: 'error',
-                        hideAfter: 5000 ,
-                        position:"top-center",
+                        hideAfter: 5000,
+                        position: "top-center",
                     });
                 } else if (Number(response) === 3) {
                     $.toast({
-                        heading: 'موفقیت آمیز',
+                        heading: 'مشکل در ارسال داده',
                         text: "توضیحات یا خالی می باشد و یا کمتر از 5 کاراکتر می باشد و یا بیشتر از 500 کاراکتر می باشد.",
                         showHideTransition: 'slide',
                         icon: 'error',
-                        hideAfter: 5000 ,
-                        position:"top-center",
+                        hideAfter: 5000,
+                        position: "top-center",
                     });
                 } else if (Number(response) === 4) {
                     $.toast({
-                        heading: 'موفقیت آمیز',
+                        heading: 'مشکل در ارسال داده',
                         text: "نام نویسنده یا خالی می باشد و یا کمتر از 10 کاراکتر می باشد و یا بیشتر از 100 کاراکتر می باشد.",
                         showHideTransition: 'slide',
                         icon: 'error',
-                        hideAfter: 5000 ,
-                        position:"top-center",
+                        hideAfter: 5000,
+                        position: "top-center",
                     });
                 } else if (Number(response) === 5) {
+                    read();
                     $('input[name=title]').val("");
                     $('textarea[name=keywords]').val("");
                     $('textarea[name=description]').val("");
@@ -125,8 +191,8 @@ checkSession();
                         text: 'عملیات با موفقیت انجام شد',
                         showHideTransition: 'slide',
                         icon: 'success',
-                        hideAfter: 5000 ,
-                        position:"top-center",
+                        hideAfter: 5000,
+                        position: "top-center",
                     });
                 }
             }
