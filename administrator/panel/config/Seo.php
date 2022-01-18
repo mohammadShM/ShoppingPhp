@@ -3,7 +3,7 @@
 /** @noinspection SqlDialectInspection */
 /** @noinspection PhpMissingFieldTypeInspection */
 declare(strict_types=1);
-include_once 'DB.php';
+include_once "DB.php";
 
 class Seo
 {

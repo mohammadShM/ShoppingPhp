@@ -9,7 +9,7 @@
     </nav>
     <div class="menu-div-img">
       <a href="<?php echo 'administrator/panel/admin/admin.php' ?>" target="_blank">
-        <img src="./assets/images/logo3.png" alt="logo" style="margin-left: 20px;">
+        <img src="../assetsClient/images/logo3.png" alt="logo" style="margin-left: 20px;">
       </a>
     </div>
 </section>

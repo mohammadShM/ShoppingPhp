@@ -1,8 +1,8 @@
-/assets/images
-/assets/fonts
-/assets/fontawesome
-/assetsMe/images
-/assetsMe/font
+/assetsClient/images
+/assetsClient/fonts
+/assetsClient/fontawesome
+/assetsAdmin/images
+/assetsAdmin/font
 /.idea
 /node_modules
 /sample

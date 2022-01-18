@@ -16,6 +16,8 @@ class DB
         try {
             $connect = new PDO("mysql:dbname=$this->database;host=$this->localhost", $this->username, $this->password);
             // echo "connect";
+            $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $connect->exec("SET NAMES 'utf8'");
             $this->con = $connect;
         } catch (Exception $e) {
             echo $e->getMessage();
