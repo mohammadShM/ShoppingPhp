@@ -33,19 +33,35 @@
     $seo = new Seo();
     $query = $seo->selectLatestSeo();
     ?>
-  <meta name="keywords" content="<?php echo $query['keywords'] ?>"/>
-  <meta name="description" content="<?php echo $query['description'] ?>"/>
-  <meta name="author" content="<?php echo $query['author'] ?>"/>
-  <meta name="robots" content="index,follow"/>
-  <meta property="og:title" content="<?php echo $query['title'] ?>"/>
-  <meta property="og:site_name" content="<?php echo $query['title'] ?>"/>
-  <meta property="og:description" content="<?php echo $query['description'] ?>"/>
-  <meta property="og:keywords" content="<?php echo $query['keywords'] ?>"/>
-  <meta property="og:image" content=""/>
-  <link rel="canonical" href="http://shoppingphp.mytest/indexSite.php"/>
-  <meta property="og:locale" content="fa_IR"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="سایت شخصی محمد شیخی"/>
+    <?php if (!empty($query)): ?>
+      <meta name="keywords" content="<?php echo $query['keywords'] ?>"/>
+      <meta name="description" content="<?php echo $query['description'] ?>"/>
+      <meta name="author" content="<?php echo $query['author'] ?>"/>
+      <meta name="robots" content="index,follow"/>
+      <meta property="og:title" content="<?php echo $query['title'] ?>"/>
+      <meta property="og:site_name" content="<?php echo $query['title'] ?>"/>
+      <meta property="og:description" content="<?php echo $query['description'] ?>"/>
+      <meta property="og:keywords" content="<?php echo $query['keywords'] ?>"/>
+      <meta property="og:image" content=""/>
+      <link rel="canonical" href="http://shoppingphp.mytest/indexSite.php"/>
+      <meta property="og:locale" content="fa_IR"/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:site_name" content="سایت شخصی محمد شیخی"/>
+    <?php else: ?>
+      <meta name="keywords" content=""/>
+      <meta name="description" content=""/>
+      <meta name="author" content=""/>
+      <meta name="robots" content="index,follow"/>
+      <meta property="og:title" content=""/>
+      <meta property="og:site_name" content=""/>
+      <meta property="og:description" content=""/>
+      <meta property="og:keywords" content=""/>
+      <meta property="og:image" content=""/>
+      <link rel="canonical" href="http://shoppingphp.mytest/indexSite.php"/>
+      <meta property="og:locale" content="fa_IR"/>
+      <meta property="og:type" content="website"/>
+      <meta property="og:site_name" content="سایت شخصی محمد شیخی"/>
+    <?php endif; ?>
   <!-- =============================== for Seo =============================== -->
   <title>Project Company</title>
 </head>

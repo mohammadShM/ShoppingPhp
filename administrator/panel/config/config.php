@@ -15,10 +15,12 @@ define('JQUERY', '/node_modules/jquery/dist/jquery.min.js');
 define('toastCss', '/node_modules/jquery-toast-plugin/dist/jquery.toast.min.css');
 define('toastJs', '/node_modules/jquery-toast-plugin/dist/jquery.toast.min.js');
 // session and check session admin ===========================================
-function checkSession()
+function checkSession(string $addressLink = '../login.php')
 {
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     if (!isset($_SESSION['admin'])) {
-        header('Location: ../login.php');
+        header('Location: ' . $addressLink);
     }
 }

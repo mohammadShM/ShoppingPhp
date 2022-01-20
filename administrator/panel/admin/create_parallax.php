@@ -46,6 +46,13 @@ checkSession();
             </p>
           </section>
         <?php endif; ?>
+        <?php if (isset($_SESSION['alt'])): ?>
+          <section class="col-6 offset-3 p-3 bg-danger mt-4 shadow rounded border">
+            <p class="text-center pt-3 text-white">
+                <?php echo $_SESSION['alt']; ?>
+            </p>
+          </section>
+        <?php endif; ?>
         <?php if (isset($_SESSION['create'])): ?>
           <section class="col-6 offset-3 p-3 bg-success mt-4 shadow rounded border">
             <p class="text-center pt-3 text-white">
@@ -70,10 +77,20 @@ checkSession();
           </section>
           <section class="form-group">
             <label for="image">image : </label>
-            <input type="file" name="image" id="image" class="form-control-file border">
+            <section class="card p-2">
+              <input type="file" name="image" id="image" class="form-control-file border">
+            </section>
+          </section>
+          <section class="form-group">
+            <label for="alt">alt for image : </label>
+            <input type="text" name="alt" id="alt"
+                   placeholder="please enter alt parallax" class="form-control">
           </section>
           <section class="form-group mt-4">
             <input type="submit" class="btn btn-primary" value="create parallax">
+          </section>
+          <section class="form-group mt-4">
+            <a type="submit" class="btn btn-success" href="show_details_parallax.php">show details parallax</a>
           </section>
         </form>
       </section>
@@ -84,6 +101,7 @@ checkSession();
     <?php $_SESSION['title'] = null; ?>
     <?php $_SESSION['description'] = null; ?>
     <?php $_SESSION['image'] = null; ?>
+    <?php $_SESSION['alt'] = null; ?>
     <?php $_SESSION['create'] = null; ?>
   <!-- =================================== For remive session =================================== -->
 </section>
