@@ -14,6 +14,7 @@ for ($i = 0; $i < sizeof($titleUnique); $i++) {
     if ($title === $titleUnique[$i]['title']) {
         $_SESSION['unique'] = "عنوان شما تکراری می باشد ؛ لطفا عنوان دیگری انتخاب کنید";
         $flag = false;
+        break;
     }
 }
 if ($flag === true) {
