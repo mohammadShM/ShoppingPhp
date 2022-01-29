@@ -46,5 +46,33 @@ class News
         $sql->execute();
     }
 
+    public function selectId($id)
+    {
+        $sql = $this->con->prepare("select * from news where id=?");
+        $sql->bindParam(1, $id);
+        $sql->execute();
+        $query = $sql->fetch();
+        return $query;
+    }
+
+    public function update($id, $title, $keywords, $description, $bodyNews)
+    {
+        $sql = $this->con->prepare("update news set title=?,description=?,keywords=?,bodyNews=? where id=?");
+        $sql->bindParam(1, $title);
+        $sql->bindParam(2, $keywords);
+        $sql->bindParam(3, $description);
+        $sql->bindParam(4, $bodyNews);
+        $sql->bindParam(5, $id);
+        $sql->execute();
+    }
+
+    public function selectLimit($limit, $offset)
+    {
+        $sql = $this->con->prepare("select * from news order by id desc limit $limit offset $offset");
+        $sql->execute();
+        $query = $sql->fetchAll();
+        return $query;
+    }
+
 }
 

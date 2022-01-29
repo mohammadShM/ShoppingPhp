@@ -24,6 +24,15 @@ $query = $news->select();
     <?php include_once "_menu.php"; ?>
   <section class="data mt-5">
     <section class="row m-0 p-0">
+        <?php if (isset($_SESSION['update'])): ?>
+          <section class="col-6 offset-3 p-3 bg-success mt-4 shadow rounded border">
+            <p class="text-center pt-3 text-white">
+                <?php echo $_SESSION['update']; ?>
+            </p>
+          </section>
+        <?php endif; ?>
+    </section>
+    <section class="row m-0 p-0">
         <?php if (isset($_SESSION['delete'])): ?>
           <section class="col-6 offset-3 p-3 bg-danger mt-5 shadow rounded border">
             <p class="text-center pt-3 text-white">
@@ -63,7 +72,7 @@ $query = $news->select();
                 </form>
               </td>
               <td>
-                <a type="submit" class="btn btn-warning" href="#">update</a>
+                <a href="edit_news.php?id=<?php echo $item['id'] ?>" class="btn btn-warning">update</a>
               </td>
             </tr>
           <?php endforeach; ?>
@@ -79,6 +88,7 @@ $query = $news->select();
 <!-- =================================== main =================================== -->
 <!-- =================================== For remive session =================================== -->
 <?php $_SESSION['delete'] = null; ?>
+<?php $_SESSION['update'] = null; ?>
 <!-- =================================== For remive session =================================== -->
 <!-- =================================== link js =================================== -->
 <script src="<?php echo URL . JQUERY; ?>"></script>

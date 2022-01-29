@@ -15,6 +15,7 @@ checkSession();
   <link rel="stylesheet" href="<?php echo URL . Bootstrap_Min; ?>"/>
   <link rel="stylesheet" href="<?php echo URL . Admin_Css; ?>"/>
   <link rel="stylesheet" href="<?php echo URL . toastCss; ?>"/>
+  <script src="//cdn.ckeditor.com/4.17.1/full/ckeditor.js"></script>
 </head>
 <body>
 <!-- =================================== Start make template =================================== -->
@@ -72,8 +73,13 @@ checkSession();
           </section>
           <section class="form-group">
             <label for="description">description : </label>
-            <textarea name="description" id="description" style="resize:none;height:150px;"
+            <textarea name="description" id="description" style="resize:none;height:450px;"
                       placeholder="please enter description parallax" value="" class="form-control"></textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'description' );
+            </script>
           </section>
           <section class="form-group">
             <label for="image">image : </label>

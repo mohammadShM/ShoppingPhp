@@ -28,10 +28,12 @@ section.news > section.itemNews > div.divNews > h1 {
     margin-bottom: 10px;
 }
 
-section.news > section.itemNews > div.divNews > p {
+section.news > section.itemNews > div.divNews > div.p {
     font-size: 14px;
     text-align: justify;
     line-height: 30px;
+    height:300px;
+    overflow: hidden;
 }
 
 section.news > section.itemNews > div.divNews > a {
