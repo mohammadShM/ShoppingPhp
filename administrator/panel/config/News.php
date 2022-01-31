@@ -55,6 +55,15 @@ class News
         return $query;
     }
 
+    public function searchTitle($title)
+    {
+        $sql = $this->con->prepare("select * from news where title=?");
+        $sql->bindParam(1, $title);
+        $sql->execute();
+        $query = $sql->fetch();
+        return $query;
+    }
+
     public function update($id, $title, $keywords, $description, $bodyNews)
     {
         $sql = $this->con->prepare("update news set title=?,description=?,keywords=?,bodyNews=? where id=?");
