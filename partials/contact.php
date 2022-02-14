@@ -1,5 +1,5 @@
 <section class="contact">
-    <form action="#" method="post">
+    <form id="form" action="#" method="post">
         <label for="fullName">نام و نام خانوادگی</label>
         <input type="text" name="fullName" id="fullName" placeholder="لطفا نام و نام خانوادگی را وارد نمایید">
         <label for="email">ایمیل</label>

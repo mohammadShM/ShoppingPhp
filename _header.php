@@ -7,6 +7,7 @@
   <!-- ======================================== Start for css ======================================== -->
   <link href="assetsClient/css/style.css" rel="stylesheet"/>
   <link href="assetsClient/fontawesome/all.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="node_modules/jquery-toast-plugin/dist/jquery.toast.min.css">
   <!-- ======================================== End for css ======================================== -->
   <!-- =============================== for favicon =============================== -->
   <link rel="apple-touch-icon" sizes="57x57" href="assetsClient/images/icon/apple-icon-57x57.png">

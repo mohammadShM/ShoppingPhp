@@ -35,10 +35,12 @@ section.contact > form > input[type=text], section.contact > form > input[type=e
     transition: all 300ms linear;
     border-radius: 5px;
     border: 2px solid whitesmoke;
+    color: #ffffff;
 }
 
 section.contact > form > input[type=text]:focus, section.contact > form > input[type=email]:focus {
     width: 50%;
+    color: whitesmoke;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -83,10 +85,12 @@ section.contact > form > textarea {
     transition: all 300ms linear;
     border-radius: 5px;
     border: 2px solid whitesmoke;
+    color: #ffffff;
 }
 
 section.contact > form > textarea:focus {
     background-color: black;
+    color: whitesmoke;
 }
 
 section.contact > form > input[type=submit] {
