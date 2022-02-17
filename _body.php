@@ -9,6 +9,9 @@
   <!-- ======================================== Start make menu ======================================== -->
     <?php include_once "./partials/menu.php"; ?>
   <!-- ======================================== End make menu ======================================== -->
+  <!-- ======================================== Start make menu ======================================== -->
+    <?php include_once "./partials/slider.php"; ?>
+  <!-- ======================================== End make menu ======================================== -->
   <!-- ======================================== Start make parallax ======================================== -->
     <?php include_once "./partials/parallax.php"; ?>
   <!-- ======================================== End make parallax ======================================== -->
@@ -29,8 +32,10 @@
 <!-- ======================================== Start make script ======================================== -->
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="node_modules/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
+<script src="node_modules/swiper/swiper-bundle.min.js"></script>
+<!--suppress ES6ConvertVarToLetConst, JSUnresolvedFunction, JSDeprecatedSymbols -->
 <script>
-    // set ajax for insert data when contact user in home page
+    // set ajax for insert data when contact user in home page ===========================================
     $("#form").submit(function (e) {
         e.preventDefault();
         let fullName = $('input[name=fullName]').val();
@@ -63,6 +68,27 @@
                 }
             }
         });
+    });
+    // for height all screen browser for swiper js ===========================================
+    $(".swiper").height($(window).height());
+    // for set swiper js ===========================================
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        effect: "fade",
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
     });
 </script>
 <!-- ======================================== End make script ======================================== -->

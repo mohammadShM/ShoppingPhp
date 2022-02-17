@@ -1,5 +1,7 @@
 <?php
 declare(strict_types=1);
+include_once "../../config/config.php";
+checkSession();
 include_once "../../config/Parallax.php";
 $parallax = new Parallax();
 $title = $_POST['title'];

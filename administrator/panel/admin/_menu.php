@@ -21,6 +21,9 @@
         <a class="nav-link text-light font-weight-normal" href="create_link.php">لینک های مرتبط</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link text-light font-weight-normal" href="create_slider.php">اسلایدر</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link text-danger font-weight-bold" href="../logout.php">خروج</a>
       </li>
     </ul>

@@ -15,13 +15,6 @@ checkSession();
   <link rel="stylesheet" href="<?php echo URL . Bootstrap_Min; ?>"/>
   <link rel="stylesheet" href="<?php echo URL . Admin_Css; ?>"/>
   <link rel="stylesheet" href="<?php echo URL . toastCss; ?>"/>
-  <script src="https://cdn.tiny.cloud/1/zykcdvg859mggsxd8w1of22bn6a9ab8hielth8gnorsgpne9/tinymce/5/tinymce.min.js"
-          referrerpolicy="origin"></script>
-  <script>
-      tinymce.init({
-          selector: 'textarea#bodyNews'
-      });
-  </script>
 </head>
 <body>
 <!-- =================================== Start make template =================================== -->
